@@ -1,14 +1,13 @@
 {pkgs, ...}: {
-  kernel.python.iPython = {
+  kernel.python.mlai = {
     enable = true;
-    
+    name = "python311";
+    displayName = "Python version 3.11";
+
     extraPackages = ps: [
       ps.numpy
-      ps.fastapi
-      ps.uvicorn
-      ps.loguru
-      ps.pyngrok
-      ps.nest_asyncio 
+      ps.pandas
+      ps.matplotlib
     ];
   };
   kernel.bash.scripting_cli.enable = true;
