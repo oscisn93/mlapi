@@ -10,5 +10,6 @@
       ps.matplotlib
     ];
   };
+  kernel.haskell.fn_scriptes.enable = true;
   kernel.bash.scripting_cli.enable = true;
 }
