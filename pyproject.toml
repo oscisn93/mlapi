@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "mlapi"
+version = "0.1.0"
+description = "A learning model implemented as an api using FastAPI, tensorflow keras and poetry2ni"
+authors = ["oscisn93 <ocisneros1@csu.fullerton.edu>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+fastapi = "^0.96.0"
+pydantic = "^1.10.9"
+uvicorn = "^0.22.0"
+numpy = "1.23"
+tensorflow-cpu = "^2.11.0"
+gast = "0.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
