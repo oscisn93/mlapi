@@ -5,7 +5,6 @@
     displayName = "Python version 3.11";
     extraPackages = ps: [
       ps.numpy
-      ps.image
       ps.tensorflow-cpu
     ];
   };
