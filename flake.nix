@@ -1,11 +1,32 @@
 {
-  description = "A very basic flake";
+  # Override nixpkgs to use the latest set of node packages
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/master";
 
-  outputs = { self, nixpkgs }: {
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
+    flake-utils.lib.eachDefaultSystem
+    (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+    in {
+      devShells.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nodejs
+          # You can set the major version of Node.js to a specific one instead
+          # of the default version
+          # pkgs.nodejs-19_x
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+          # You can choose pnpm, yarn, or none (npm).
+          pkgs.nodePackages.pnpm
+          # pkgs.yarn
 
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-  };
+          pkgs.nodePackages.typescript
+          pkgs.nodePackages.typescript-language-server
+        ];
+      };
+    });
 }
