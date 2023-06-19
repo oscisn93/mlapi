@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 // @ts-ignore
 const Container = styled.div`
+  font-family: 'Titillium Web', sans-serif;
   width: 100%;
   height: 100vh;
   display: flex;
