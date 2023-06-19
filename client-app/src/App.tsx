@@ -1,6 +1,7 @@
-import UploadImage from "./components/uploadImage.js";
+import UploadImage from "./components/uploadImage.tsx";
 import styled from "styled-components";
 
+// @ts-ignore
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -10,6 +11,7 @@ const Container = styled.div`
   background-color: #2a2a2a;
 `;
 
+// @ts-ignore
 const Header = styled.header`
   width: 100%;
   display: block;
@@ -19,12 +21,14 @@ const Header = styled.header`
   text-align: center;
 `;
 
+// @ts-ignore
 const Title = styled.h1`
   display: block;
   font-size: 1.5em;
   color: #fff;
 `;
 
+// @ts-ignore
 const Main = styled.main`
   width: 100%;
   display: flex;
@@ -35,6 +39,7 @@ const Main = styled.main`
   align-items: center;
 `;
 
+// @ts-ignore
 const Footer = styled.footer`
   width: 100%;
   padding: 1em;
