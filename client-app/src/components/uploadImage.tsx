@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import styled from "styled-components";
+import { v4 as uuid } from "uuid";
 
 // @ts-ignore
 const DropzoneStyled = styled.div`
@@ -41,19 +42,33 @@ export default function UploadImage() {
       );
     },
   });
+  const handleUpload = async () => {
+    await fetch(`https://bucket_api.ocisneros1.workers.dev/${uuid()}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "image/jpeg",
+      },
+      body: images.slice(-1)[0],
+    });
+  };
 
   return (
     <>
-      <DropzoneStyled {...getRootProps()}>
-        <input {...getInputProps()} />
-        <p>
-          Drag and drop an image here, or click to select an image and find out!
-        </p>
-      </DropzoneStyled>
+      {images.length == 0 ? (
+        <DropzoneStyled {...getRootProps()}>
+          <input {...getInputProps()} />
+          <p>
+            Drag and drop an image here, or click to select an image and find
+            out!
+          </p>
+        </DropzoneStyled>
+      ) : (
+        ""
+      )}
       {images.length > 0 ? (
         <>
           <ImagePreview src={images[0].preview} />
-          <button onClick={() => console.log("TODO")}>Predict</button>
+          <button onClick={() => handleUpload()}>Predict</button>
           <button onClick={() => setImages([])}>Clear</button>
         </>
       ) : (
