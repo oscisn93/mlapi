@@ -11,3 +11,5 @@ The model is trained in python tensorflow, and ported using the SavedModel forma
 - React
 - Vercel
 - Tensorflow.js
+- Cloudflare Workers
+- Cloudflare R2 storage
