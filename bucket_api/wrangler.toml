@@ -1,0 +1,14 @@
+name = "bucket_api"
+main = "src/worker.ts"
+compatibility_date = "2023-06-21"
+
+
+account_id = "40297c2f07bf808cbf4d4e7a6c841f30"
+workers_dev = true
+
+# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
+# Docs: https://developers.cloudflare.com/r2/api/workers/workers-api-usage/
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "cv-app"
+
