@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: ''
+  baseURL: 'https://bucket_api.ocisneros1.workers.dev'
 });
 
