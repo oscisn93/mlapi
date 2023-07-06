@@ -1,10 +1,4 @@
-/**
- * - Run `npm run deploy` to publish your worker
- * Learn more at https://developers.cloudflare.com/workers/
- */
-
 export interface Env {
-	// Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
 	R2_BUCKET: R2Bucket;
 }
 

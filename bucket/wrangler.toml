@@ -11,4 +11,4 @@ workers_dev = true
 [[r2_buckets]]
 binding = "R2_BUCKET"
 bucket_name = "cv-app"
-
+preview_bucket_name = "cv-app-dev"
