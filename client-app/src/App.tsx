@@ -1,11 +1,11 @@
-import UploadImage from "./components/uploadImage.tsx";
+import UploadImage from "./components/uploadImage.jsx";
 import styled from "styled-components";
 
 // @ts-ignore
 const Container = styled.div`
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   width: 100%;
-  height: 100vh;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@ const Title = styled.h1`
 
 // @ts-ignore
 const Main = styled.main`
-  width: 100%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -62,7 +62,10 @@ function App() {
         <UploadImage />
       </Main>
       <Footer>
-        Made with <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>
+        <p>
+          {"Made with ❤️ by "}
+          <a href="https://github.com/oscisn93"> Oscar Cisneros</a>
+        </p>
       </Footer>
     </Container>
   );

@@ -10,7 +10,7 @@ const DropzoneStyled = styled.div`
   border: 1px dashed #999;
   border-radius: 2px;
   padding: 4px;
-  width: 70%;
+  width: 60%;
   min-height: 200px;
   box-sizing: border-box;
   align-items: center;
@@ -22,9 +22,24 @@ const DropzoneStyled = styled.div`
 `;
 
 // @ts-ignore
-const ImagePreview = styled.img`
+const PreviewContainer = styled.div`
   display: flex;
-  width: 70%;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+`;
+
+// @ts-ignore
+const PreviewImage = styled.img`
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  object-fit: cover;
+`;
+
+const Button = styled.button`
+  width: 50%;
   object-fit: cover;
 `;
 
@@ -66,11 +81,11 @@ export default function UploadImage() {
         ""
       )}
       {images.length > 0 ? (
-        <>
-          <ImagePreview src={images[0].preview} />
-          <button onClick={() => handleUpload()}>Predict</button>
-          <button onClick={() => setImages([])}>Clear</button>
-        </>
+        <PreviewContainer>
+          <PreviewImage src={images[0].preview} />
+          <Button onClick={() => handleUpload()}>Predict</Button>
+          <Button onClick={() => setImages([])}>Clear</Button>
+        </PreviewContainer>
       ) : (
         ""
       )}
